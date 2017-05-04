@@ -54,16 +54,6 @@ class GroupController
     /**
      * Returns a paginated list of groups.
      *
-     * @ApiDoc(
-     *  resource=true,
-     *  output={"class"="Sonata\DatagridBundle\Pager\PagerInterface", "groups"={"sonata_api_read"}}
-     * )
-     *
-     * @QueryParam(name="page", requirements="\d+", default="1", description="Page for groups list pagination (1-indexed)")
-     * @QueryParam(name="count", requirements="\d+", default="10", description="Number of groups by page")
-     * @QueryParam(name="enabled", requirements="0|1", nullable=true, strict=true, description="Enabled/disabled groups only?")
-     *
-     * @View(serializerGroups={"sonata_api_read"}, serializerEnableMaxDepthChecks=true)
      *
      * @param ParamFetcherInterface $paramFetcher
      *
@@ -112,18 +102,6 @@ class GroupController
     /**
      * Retrieves a specific group.
      *
-     * @ApiDoc(
-     *  requirements={
-     *      {"name"="id", "dataType"="integer", "requirement"="\d+", "description"="group id"}
-     *  },
-     *  output={"class"="FOS\UserBundle\Model\GroupInterface", "groups"={"sonata_api_read"}},
-     *  statusCodes={
-     *      200="Returned when successful",
-     *      404="Returned when group is not found"
-     *  }
-     * )
-     *
-     * @View(serializerGroups={"sonata_api_read"}, serializerEnableMaxDepthChecks=true)
      *
      * @param $id
      *
@@ -137,14 +115,6 @@ class GroupController
     /**
      * Adds a group.
      *
-     * @ApiDoc(
-     *  input={"class"="sonata_user_api_form_group", "name"="", "groups"={"sonata_api_write"}},
-     *  output={"class"="Sonata\UserBundle\Model\Group", "groups"={"sonata_api_read"}},
-     *  statusCodes={
-     *      200="Returned when successful",
-     *      400="Returned when an error has occurred while group creation",
-     *  }
-     * )
      *
      * @param Request $request A Symfony request
      *
@@ -160,18 +130,6 @@ class GroupController
     /**
      * Updates a group.
      *
-     * @ApiDoc(
-     *  requirements={
-     *      {"name"="id", "dataType"="integer", "requirement"="\d+", "description"="group identifier"}
-     *  },
-     *  input={"class"="sonata_user_api_form_group", "name"="", "groups"={"sonata_api_write"}},
-     *  output={"class"="Sonata\UserBundle\Model\Group", "groups"={"sonata_api_read"}},
-     *  statusCodes={
-     *      200="Returned when successful",
-     *      400="Returned when an error has occurred while group creation",
-     *      404="Returned when unable to find group"
-     *  }
-     * )
      *
      * @param int     $id      Group identifier
      * @param Request $request A Symfony request
@@ -188,16 +146,6 @@ class GroupController
     /**
      * Deletes a group.
      *
-     * @ApiDoc(
-     *  requirements={
-     *      {"name"="id", "dataType"="integer", "requirement"="\d+", "description"="group identifier"}
-     *  },
-     *  statusCodes={
-     *      200="Returned when group is successfully deleted",
-     *      400="Returned when an error has occurred while group deletion",
-     *      404="Returned when unable to find group"
-     *  }
-     * )
      *
      * @param int $id A Group identifier
      *
