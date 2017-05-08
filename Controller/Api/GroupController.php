@@ -18,7 +18,6 @@ use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\View\View as FOSRestView;
 use FOS\UserBundle\Model\GroupInterface;
 use JMS\Serializer\SerializationContext;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Sonata\DatagridBundle\Pager\PagerInterface;
 use Sonata\UserBundle\Model\GroupManagerInterface;
 use Symfony\Component\Form\FormFactoryInterface;
